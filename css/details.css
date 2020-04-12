@@ -1,0 +1,663 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@keyframes arrow {
+  0% {
+    padding: 0 0.2rem;
+  }
+  50% {
+    padding: 0 0.5rem;
+  }
+  100% {
+    padding: 0 0.2rem;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: rgb(238, 238, 238);
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
+}
+
+a,
+input,
+button {
+  background: none;
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+header {
+  position: relative;
+  font-size: 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  color: white;
+  background: #113448;
+}
+
+#logo img {
+  width: 8rem;
+  height: 2rem;
+  object-fit: cover;
+}
+
+header nav {
+  width: 50%;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header nav a {
+  color: white;
+  position: relative;
+  font-weight: 600;
+}
+header nav a.active {
+  color: #14bf98;
+}
+
+header nav a::after {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 00%;
+  height: 0.1rem;
+  background: white;
+  content: "";
+  transition: 0.2s width;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+#profile {
+  background: #14bf98;
+  padding: 0.3rem 1.5rem;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: 600;
+  position: relative;
+}
+
+#profile #drop {
+  position: absolute;
+  top: 150%;
+  background: rgb(231, 231, 231);
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  width: 120%;
+  transform: translate(-50%, 0);
+  border-radius: 3px;
+  left: 50%;
+  display: none;
+}
+
+#profile #drop::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border: 10px red solid;
+  border-color: transparent transparent rgb(231, 231, 231) transparent;
+}
+
+#profile #drop div {
+  padding: 0.7rem;
+}
+#profile #drop div:hover {
+  background: rgb(214, 214, 214);
+}
+
+/* 
+
+
+
+
+
+*/
+/* filter */
+#detail {
+  color: #2b2b2b;
+  padding: 0 1rem;
+}
+
+#detail .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#detail .header > div {
+  display: flex;
+  align-items: flex-end;
+}
+
+#detail .header > h1 {
+  margin: 1.5rem 0;
+}
+
+#detail .header > div p {
+  color: gray;
+}
+
+#detail .header > div i {
+  background: red;
+  margin: 0 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#detail .header > div i:first-of-type {
+  background: rgb(83, 0, 218);
+}
+#detail .header > div i:nth-of-type(2) {
+  background: rgb(26, 99, 255);
+}
+#detail .header > div i:nth-of-type(3) {
+  background: rgb(255, 12, 73);
+}
+
+#detail .header > div i:last-of-type {
+  background: rgb(255, 102, 0);
+}
+
+#detail .info {
+  display: flex;
+}
+
+#detail .info .image {
+  width: 45%;
+  border-radius: 3px;
+  overflow: hidden;
+  border: 5px rgba(128, 128, 128, 0.295) solid;
+}
+
+#detail .info img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#detail .data {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60%;
+  height: 100%;
+  /* background: red; */
+}
+
+#detail .data h2 {
+  color: rgb(70, 70, 70);
+}
+
+#detail .data .date {
+  display: flex;
+  margin: 2rem 0;
+  width: 50%;
+  justify-content: space-between;
+}
+
+#detail .date div {
+  background: #14bf98;
+  color: white;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  position: relative;
+}
+
+#detail .date div::after {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.8rem;
+  /* text-decoration: underline; */
+  color: gray;
+}
+
+#detail .date div:first-of-type::after {
+  content: "Open Call";
+}
+
+#detail .date div:last-of-type::after {
+  content: "Deadline Date";
+}
+
+#detail .meters {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: orange;
+  margin: 0.5rem 0;
+  /* background: red; */
+}
+
+#detail .meters div span {
+  display: block;
+  padding: 0 0.5rem;
+}
+
+#detail .meters div .name1 {
+  color: #14bf98;
+}
+#detail .meters div .name2 {
+  color: #14bf98;
+}
+#detail .meters div .name3 {
+  color: rgb(255, 72, 0);
+}
+
+/* .meters div .value:last-of-type { */
+#detail .meters div span[class*="value"] {
+  background-color: rgb(226, 226, 226);
+  width: 6rem;
+  margin: 0.3rem auto;
+  height: 0.5rem;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+#detail .meters div [class*="value"]::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: yellow;
+  z-index: 11;
+}
+
+#detail .meters div .value1::after {
+  background: #00a17c;
+}
+#detail .meters div .value2::after {
+  background: #00ca65;
+}
+#detail .meters div .value3::after {
+  background: rgb(255, 72, 0);
+}
+
+#detail .data > div {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+#detail .data .participants {
+  width: 10rem;
+  /* background: red; */
+}
+
+#detail .data .participants p {
+  font-weight: bold;
+  color: rgb(78, 78, 78);
+}
+
+#detail .actions {
+  /* background: red; */
+  cursor: pointer;
+  /* padding: 0.5rem; */
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+
+#detail .actions i {
+  background: #2a5d77;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  color: white;
+  border-radius: 50%;
+  transition: 0.2s transform;
+}
+
+#detail .actions i:hover {
+  transform: scale(0.9);
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+#header div {
+  position: relative;
+}
+
+#header #drop {
+  position: absolute;
+  width: 15rem;
+  background: rgb(214, 214, 214);
+  z-index: 11;
+  top: 120%;
+  font-weight: 600;
+  display: none;
+  color: #113448;
+  right: 0%;
+  border-radius: 3px;
+}
+
+#header #drop::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  right: 0.5rem;
+  border-color: transparent transparent rgb(214, 214, 214) transparent;
+  border-style: solid;
+  border-width: 0.7rem;
+}
+
+#header #drop > div {
+  padding: 0.7rem 1rem;
+  cursor: pointer;
+  color: #113448;
+}
+
+#header #drop > div:hover {
+  background: rgb(194, 194, 194);
+}
+
+#header i {
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+#explore .tabs {
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  /* width: 95%; */
+  margin: auto;
+  background: #e6e6e6;
+  font-size: 1.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  /* border-radius: 3px; */
+  justify-content: space-evenly;
+  /* border: 5px rgba(133, 133, 133, 0.13) solid; */
+}
+
+#explore .tabs i {
+  margin-right: 0.5rem;
+}
+
+#explore .tabs div {
+  padding: 1rem;
+  color: #113448;
+  width: 100%;
+}
+
+#explore .tabs div.active {
+  color: #113448;
+  border-bottom: 4px #113448 solid;
+  background: #ffffff;
+}
+
+#category {
+  border: 2px rgba(212, 212, 212, 0.603) solid;
+  border-width: 2px 0 2px 0;
+  padding: 1rem 0;
+}
+
+#category .items {
+  display: flex;
+  margin: 1rem 0;
+}
+#category .items div {
+  background: #113448;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  color: white;
+  margin-right: 0.7rem;
+  font-size: 1.1rem;
+}
+
+#category .items div i {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+#overview {
+  padding: 2rem 1rem;
+}
+
+#overview > p {
+  color: #14bf98;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin: 1rem 0;
+}
+
+#overview h2 {
+  color: #484a46;
+}
+
+#overview > ul {
+  margin: 0 2rem;
+}
+#overview li {
+  padding: 0.3rem;
+  color: #787976;
+}
+
+#overview .more {
+  margin: 2rem 0;
+}
+
+#overview .more p {
+  padding: 0.5rem;
+  color: #787976;
+}
+
+#overview button {
+  color: #f63854;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#disscussions {
+  margin: 2rem 0;
+  padding: 1rem 2rem;
+}
+
+#disscussions p {
+  font-weight: bold;
+  color: #787976;
+}
+
+#disscussions .disscussion {
+  display: flex;
+  align-items: flex-start;
+  color: #484a46;
+  padding: 1rem 0;
+  border-bottom: 2px gray solid;
+}
+
+#disscussions .disscussion img {
+  width: 4rem;
+  border-radius: 3px;
+  margin-right: 0.8rem;
+  border: 2px solid rgba(128, 128, 128, 0.411);
+}
+
+#disscussions .disscussion .info div {
+  display: flex;
+  justify-content: space-between;
+}
+
+#disscussions .name {
+  color: #00a17c;
+  font-weight: bold;
+}
+
+#disscussions .time {
+  font-style: italic;
+}
+
+#disscussions p {
+  color: black;
+  margin: 0.5rem 0;
+}
+
+#disscussions .like i {
+  color: black;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+#submissions {
+  /* background: red; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.submission img {
+  width: 100%;
+}
+.submission {
+  background: rgb(226, 226, 226);
+  width: 30vw;
+  margin-bottom: 3rem;
+  border-radius: 3px;
+  box-shadow: 0 5px 5px rgba(128, 128, 128, 0.219);
+}
+.submission div {
+  padding: 1rem 0.5rem;
+}
+
+.submission h2 {
+  color: #00ca65;
+}
+.submission span {
+  background: #14bf98;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+}
+.submission p {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+
+.submission a {
+  margin: 1rem 0;
+  padding: 0.5rem 0;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  background: #113448;
+  color: white;
+  position: relative;
+  padding: 4rem 1rem;
+  margin-top: 5rem;
+  width: 100%;
+  /* text-align: center; */
+}
+
+footer h2 {
+  color: white;
+}
+footer .icons {
+  color: #153e52;
+  background: rgb(235, 235, 235);
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+footer .icons i {
+  color: #153e52;
+  /* background: white; */
+}
+
+footer .icons p {
+  margin: 1rem 0;
+}
+
+footer a {
+  display: block;
+  color: white;
+  margin: 1rem;
+  font-weight: 600;
+}
+footer a:hover {
+  text-decoration: underline;
+  /* font-weight: bold; */
+}
+
+.contact a {
+  display: inline-block;
+  font-size: 1.5rem;
+}
+
+#footlogo {
+  /* background: red; */
+  height: 5rem;
+  overflow: hidden;
+}
+footer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+footer input {
+  background: rgb(243, 243, 243);
+  padding: 0.7rem 1rem;
+  border-radius: 2px;
+}
+
+footer button {
+  padding: 0.7rem 1rem;
+  background: #14bf98;
+  cursor: pointer;
+  color: white;
+  font-weight: 600;
+  border-radius: 2px;
+  margin-left: 0.3rem;
+}
+
+footer .email {
+  margin: 1rem 0;
+}
